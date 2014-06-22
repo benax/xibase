@@ -1,0 +1,57 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleXibase" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="ruleXibase" scope="public">
+    <example>Sarah, allume la lumière du salon</example>
+    <tag>out.action=new Object(); </tag>
+    <item>Sarah</item>
+	
+     <one-of>
+      <item>allume<tag>out.action.actionModule="ON";out.action.ttsAction="j'allume";</tag></item>
+	  <item>active<tag>out.action.actionModule="ON";out.action.ttsAction="j'active";</tag></item>
+	  <item>ouvre<tag>out.action.actionModule="ON";out.action.ttsAction="j'ouvre";</tag></item>
+      <item>éteint<tag>out.action.actionModule="OFF";out.action.ttsAction="j'éteint";</tag></item>
+	  <item>désactive<tag>out.action.actionModule="OFF";out.action.ttsAction="je désactive";</tag></item>
+	  <item>ferme<tag>out.action.actionModule="OFF";out.action.ttsAction="je ferme";</tag></item>
+	  <item>lance le scénario<tag>out.action.actionModule="MACRO";out.action.ttsAction="je lance le scénario"</tag></item>
+	  <item>Comment est <tag>out.action.actionModule="SONDE";</tag></item>
+	  <item>Mets à jour la domotique<tag>out.action.actionModule="UPDATE";out.action.ttsAction="je mets a jour les peripheriques de votre zibase";</tag></item>
+    </one-of> 
+	
+    <item repeat="0-1">
+    <one-of>
+	<!-- Automatic Generation § -->
+      <item>Lumière Cuisine<tag>out.action.ttsName="Lumière Cuisine";out.action.typeAction="actionneur";out.action.adresse="B5";out.action.protocol="6";</tag></item>
+<!-- § Automatic Generation -->
+	</one-of>
+    </item>
+	<item repeat="0-1">
+	<one-of>
+			<item>a vingt cinq pour cent
+			<tag>
+				out.action.ttsDim=" a vingt cinq pour cent";
+				out.action.dimValue=25;
+			</tag>
+		</item>
+		<item>a cinquant pour cent
+			<tag>
+				out.action.ttsDim=" a cinquante pour cent";
+				out.action.dimValue=50;
+			</tag>
+		</item>
+		<item>a soixante quinze pour cent
+			<tag>
+				out.action.ttsDim=" a soixante quinze pour cent";
+				out.action.dimValue=75;
+			</tag>
+		</item>
+		<item>a cent pour cent
+			<tag>
+				out.action.ttsDim=" a cent pour cent";
+				out.action.dimValue=100;
+			</tag>
+		</item>
+	</one-of>
+	</item>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/xibase";</tag>
+  </rule>
+</grammar>
+              

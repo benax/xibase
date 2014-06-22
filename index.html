@@ -1,0 +1,64 @@
+﻿<html>
+<body>
+<h2>Plugin Zibase - Zibase Mini pour SARAH</h2>
+<p><br>
+  auteur : Benax<br>
+  version : 1.0<br>
+  <br>
+</p>
+<p><br>
+  1. CONFIGURATION ZIBASE.PROP<br>
+  2. IMPORTATION DES PERIPHERIQUES<br>
+3. LE FICHIER ZIBASE.XML<br>
+4. QUELLES SONT LES COMMANDES POSSIBLES
+<br>
+  5. CHANGELOG<br>
+  <br>
+Ceci est un petit plugin pour Zibase ultra simple à utiliser. Je tiens a remercier Baptiste MARIENVAL de qui je me suis inspiré pour ce plugin.</p>
+<p><strong>Son fonctionnement est extrêmement simple puisque d'une simple commande &quot;SARAH mets à jour la domotique&quot;, il va automatiquement recupérer l'ensemble des modules et scénarios de votre Zibase et enrichir le vocabulaire.</strong></p>
+<p><b>1.   CONFIGURATION XIBASE.PROP</b><br>
+  <br>
+  Le fichier xibase.prop permet de paramétrer les informations nécessaires au bon fonctionnement du plugin.<br>
+  Il est donc indispensable de renseigner ces 5 éléments :<br>
+</p>
+<li>plateforme_web : adresse de la plateforme zibase de votre installation (par ex. zibase.net ou zibase2.net)</li>
+<li>ip_lan : adresse IP locale de votre zibase. Se trouve dans le configurateur zibase dans la section &quot;identifiants de Zibase&quot;.</li>
+<li>  API_version : 1 ou 2. Par defaut ou si vous ne savez pas, laisser ce paramêtre sur &quot;1&quot;.</li>
+<li>device : nom de votre Zibase. Se trouve dans le configurateur zibase dans la section &quot;identifiants de Zibase&quot;.<br>
+</li>
+<li>token : token associé Zibase. Se trouve dans le configurateur zibase dans la section &quot;identifiants de Zibase&quot;.<br>
+ <br>
+ <b>2. IMPORTATION DES PERIPHERIQUES</b><br>
+ <br>
+cette phase est essentielle, elle permet au plugin d'enrichir son vocabulaire en fonction de votre propre configuration et sans manipulation particuliaire.</li>
+<li>Dites simplement :&quot;SARAH mets a jour ma domotique&quot;. Et VOILA !!<br>
+  <br>
+  <br>
+  <b>3.   LE FICHIER ZIBASE.XML</b><br>
+  <br>
+Une fois l'importation effectuée, tous les periphériques VISIBLES DEPUIS L'INTERFACE sont importés dans la section &quot;Automatic generation&quot;.</li>
+<li>vous pouvez alors modifier certain éléments de cette section, à savoir :</li>
+<ul>
+  <li>&lt;item&gt; qui est la commande que vous prononcez.</li>
+  <li>ttsName qui est le retour annoncé par SARAH.</li>
+</ul>
+<li>je vous recommande de ne pas toucher aux autres paramètres.</li>
+<p> <strong>4. QUELLES SONT LES COMMANDES POSSIBLES :</strong></p>
+<ul>
+  <li>pour importer la configuration : &quot;Mets à jour la domotique&quot;</li>
+  <li>pour les actionneurs : &quot;Allumer&quot;, &quot;Ouvre&quot;, &quot;Active&quot;, &quot;Eteint&quot;, &quot;Ferme&quot;, &quot;Désactive&quot;</li>
+  <li>pour les sonde (temperature, hydro, luminosité) : &quot;Comment est...&quot;</li>
+  <li>pour les scenario : &quot;lance le scénario...&quot;</li>
+  <li>... le tout précédé bien sûr de &quot;SARAH...&quot;<br>
+  </li>
+</ul>
+<p><b>5.   CHANGELOG</b><br>
+  <br>
+  <b>version 1.0 (20/06/2014)</b><br>
+  Refonte totale du plugin de Baptiste MARIENVAL                </p>
+<p>6<b>.   TODO</b></p>
+<p><b>je n'ai pas pu tester l'API2, n'ayant pas de zibase2 / Pro.</b><br>
+  <br>
+</p>
+</body>
+</html>

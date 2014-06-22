@@ -1,0 +1,10 @@
+
+.plugin-gridster.xibase .front {
+  background: #FFFFFF url('images/xibase_logo.jpg') center 25px;
+  background-size:   160px 100px;
+  background-repeat: no-repeat;
+}
+
+.plugin-gridster.xibase .back {
+  background: #FFFFFF;
+}
