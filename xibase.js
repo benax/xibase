@@ -21,14 +21,29 @@ exports.action = function(data, callback, config, SARAH){
 /**** VERIF DES PARAMETRES ***/
 console.log("xibase");
 
-if (!config.ip_lan || !config.device || !config.token || !config.plateforme_web) {
+if (!config.ip_lan || !config.login || !config.password || !config.plateforme_web) {
 		callback({'tts': "Les paramètres Xibase ne sont pas complets."});
 		return;
 }
 /*****************************/
 /***** ETUDE DES ACTIONS *****/
 /*****************************/
-	var api2_path='https://'+ config.plateforme_web + '/api/get/ZAPI.php?zibase=' + config.device + '&token=' + config.token;
+/********recuperation de id / token ***/
+	var id_url='https://'+ config.plateforme_web + '/m/get_iphone.php?login=' +config.login + '&password=' + config.password;
+	console.log(id_url);
+ 	// Send Request
+	var device_id;
+	var token;
+	var request = require('request');
+	request({ 'uri' : id_url, 'json' : true }, function (err, response, body){
+	var tid=body.split(":");
+
+
+	console.log("tab : " + tid);
+	device_id=tid[0];
+	token=tid[1];
+	console.log(token);
+	var api2_path='https://'+ config.plateforme_web + '/api/get/ZAPI.php?zibase=' + device_id + '&token=' + token;
 
 
 /**** MISE A JOUR AUTOMATIQUE DES PERIHPERIQUES ****/
@@ -36,7 +51,6 @@ if (data.actionModule == "UPDATE") {
 		
 		console.log("Api_version 2");
 		device_URL=api2_path + "&service=get&target=home";
-		console.log("device_url : " + device_URL);
 
  	// Send Request
 	var request = require('request');
@@ -250,6 +264,7 @@ else if (data.actionModule == "SONDE") {
 	callback({'tts': tts});
 	});
 	}
+	});
 }
 
 function FormatNumberLength(num, length) {
