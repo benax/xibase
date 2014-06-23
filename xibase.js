@@ -36,6 +36,7 @@ if (data.actionModule == "UPDATE") {
 		
 		console.log("Api_version 2");
 		device_URL=api2_path + "&service=get&target=home";
+		console.log("device_url : " + device_URL);
 
  	// Send Request
 	var request = require('request');
