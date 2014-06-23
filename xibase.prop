@@ -2,10 +2,9 @@
   "modules" : { 
     "xibase"  : {
       "description": "Pilote les appareils de votre Zibase",
-      "version" : "3.0",
+      "version" : "1.1",
       "plateforme_web": "[FIXME]",
 	  "ip_lan": "[FIXME]",
-	  "API_Version" : "1",
       "device": "[FIXME]",
       "token": "[FIXME]"
     }
